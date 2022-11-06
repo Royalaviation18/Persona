@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/imBg"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:src="@drawable/login" />
 
     <TextView
@@ -105,6 +105,22 @@
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="Don't have an account? Sign Up"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btnGSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/tvRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/nbuttonbg"
+        android:drawableLeft="@drawable/google"
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:text="Sign in with Google"
         android:textColor="@color/black" />
 
 
