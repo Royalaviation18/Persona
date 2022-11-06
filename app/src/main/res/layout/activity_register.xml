@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imBg"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:src="@drawable/register" />
 
     <TextView
@@ -70,10 +70,28 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/email"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp">
+
+        <EditText
+            android:id="@+id/etUAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your age"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/age"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
@@ -125,9 +143,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnSignUp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Already have an account? Login"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btnGSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/tvLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/nbuttonbg"
+        android:drawableLeft="@drawable/google"
+        android:gravity="center"
+        android:text="Sign in with Google"
         android:textColor="@color/black" />
 
 

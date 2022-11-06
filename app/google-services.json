@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1014325928789",
+    "project_id": "persona-7e0ec",
+    "storage_bucket": "persona-7e0ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014325928789:android:87bce350798cea51f945dc",
+        "android_client_info": {
+          "package_name": "com.royalaviation.persona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014325928789-m0699618vrigpb8e5o40802240enqvl7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.royalaviation.persona",
+            "certificate_hash": "90b150ea46ac41058b212b0a572f28132326ebfe"
+          }
+        },
+        {
+          "client_id": "1014325928789-mtasn9c8shqp5e30bbr4tde824rnol4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGOh84uEyCvgjKgvltQHkLM6IX-UHH210"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014325928789-mtasn9c8shqp5e30bbr4tde824rnol4u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
