@@ -95,8 +95,10 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                loadingBar.dismiss();
                                 checkEmailVerification();
                             } else {
+                                loadingBar.dismiss();
                                 Toast.makeText(getApplicationContext(), "Account doesn't exists", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -113,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
         if (firebaseUser.isEmailVerified() == true) {
             Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
             finish();
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, NotesActivity.class));
         } else {
             Toast.makeText(getApplicationContext(), "Verify your email first!", Toast.LENGTH_SHORT).show();
         }
