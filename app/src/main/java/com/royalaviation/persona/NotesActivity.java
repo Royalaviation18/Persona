@@ -18,12 +18,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -78,10 +82,16 @@ public class NotesActivity extends AppCompatActivity {
                 holder.noteTitle.setText(model.getTitle());
                 holder.noteContent.setText(model.getContent());
 
+                String docId = noteAdapter.getSnapshots().getSnapshot(position).getId();
+
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //note detail open
+                        Intent intent = new Intent(view.getContext(), noteDetails.class);
+                        intent.putExtra("title", model.getTitle());
+                        intent.putExtra("content", model.getContent());
+                        intent.putExtra("noteId", docId);
+                        view.getContext().startActivity(intent);
                     }
                 });
 
@@ -93,12 +103,34 @@ public class NotesActivity extends AppCompatActivity {
                         popupMenu.getMenu().add("Edit").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                             @Override
                             public boolean onMenuItemClick(MenuItem menuItem) {
-                                Intent intent = new Intent(view.getContext(),editNoteActivity.class);
+                                Intent intent = new Intent(view.getContext(), editNoteActivity.class);
+                                intent.putExtra("title", model.getTitle());
+                                intent.putExtra("content", model.getContent());
+                                intent.putExtra("noteId", docId);
                                 view.getContext().startActivity(intent);
                                 return false;
                             }
                         });
 
+                        popupMenu.getMenu().add("Delete").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem menuItem) {
+                                DocumentReference documentReference = firebaseFirestore.collection("notes").document(firebaseUser.getUid()).collection("myNotes").document(docId);
+                                documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(view.getContext(), "The note is deleted", Toast.LENGTH_SHORT).show();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(view.getContext(), "Failed to deleted", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                return false;
+                            }
+                        });
+                        popupMenu.show();
                     }
                 });
             }
@@ -116,7 +148,6 @@ public class NotesActivity extends AppCompatActivity {
         staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mrecylerView.setLayoutManager(staggeredGridLayoutManager);
         mrecylerView.setAdapter(noteAdapter);
-
     }
 
     private int getRandomColor() {

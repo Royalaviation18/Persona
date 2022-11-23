@@ -4,41 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editNoteActivity">
+    tools:context=".noteDetails">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBarEditNote"
+        android:id="@+id/toolBarNoteDetails"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white">
 
 
-        <EditText
-            android:id="@+id/etNoteEditTitle"
+        <TextView
+            android:id="@+id/tvNoteTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:text="Title Displayed here"
             android:paddingTop="12dp"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
 
     </androidx.appcompat.widget.Toolbar>
 
-    <EditText
-        android:id="@+id/etEditNoteDesc"
+    <TextView
+        android:id="@+id/tvNoteDesc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolBarEditNote"
+        android:layout_below="@id/toolBarNoteDetails"
         android:background="#faf7f7"
         android:gravity="top|left"
         android:hint="Enter your note "
         android:padding="15dp"
         android:textColor="@color/black"
-        android:textSize="15sp" />
+        android:textSize="17sp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnSaveEditNote"
+        android:id="@+id/goToEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -46,7 +47,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/updated"
+        android:src="@drawable/edit"
         app:maxImageSize="30dp" />
 
 

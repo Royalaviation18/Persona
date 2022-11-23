@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -30,6 +31,7 @@ public class CreateNote extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseFirestore firebaseFirestore;
+    private ProgressBar progressBar;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -40,6 +42,14 @@ public class CreateNote extends AppCompatActivity {
     }
 
     @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_note);
@@ -47,11 +57,9 @@ public class CreateNote extends AppCompatActivity {
         etTitle = findViewById(R.id.etNoteTitle);
         etContent = findViewById(R.id.etNoteDesc);
         fActSave = findViewById(R.id.btnSaveNote);
-
+        progressBar = findViewById(R.id.pbCreateNote);
         Toolbar toolbar = findViewById(R.id.toolBarCreateNote);
         setSupportActionBar(toolbar);
-
-
         //for having a back button in the toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -75,6 +83,9 @@ public class CreateNote extends AppCompatActivity {
                     etContent.requestFocus();
                     return;
                 } else {
+
+                    progressBar.setVisibility(View.VISIBLE);
+
                     DocumentReference documentReference = firebaseFirestore.collection("notes").document(firebaseUser.getUid()).collection("myNotes").document();
                     Map<String, Object> note = new HashMap<>();
                     note.put("title", title);
@@ -84,13 +95,16 @@ public class CreateNote extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(getApplicationContext(), "Note created successfully", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(CreateNote.this, NotesActivity.class));
+
                         }
 
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Toast.makeText(getApplicationContext(), "Failed to create note", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
 
                         }
                     });
