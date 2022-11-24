@@ -168,7 +168,7 @@ public class NotesActivity extends AppCompatActivity {
         return colorCode.get(number);
     }
 
-    public class NoteViewHolder extends RecyclerView.ViewHolder {
+    public static class NoteViewHolder extends RecyclerView.ViewHolder {
 
         private TextView noteTitle;
         private TextView noteContent;
