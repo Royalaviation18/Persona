@@ -42,19 +42,19 @@ public class SettingsFragment extends Fragment {
         ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, arrayList);
         listView.setAdapter(arrayAdapter);
 
-       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-           @Override
-           public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               if(i==0){
-                   Toast.makeText(getActivity(), "You clicked My profile", Toast.LENGTH_SHORT).show();
-               }
-               if(i==1){
-                   firebaseAuth.signOut();
-                   getActivity().finish();
-                   startActivity(new Intent(getActivity(),LoginActivity.class));
-               }
-           }
-       });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) {
+                    Toast.makeText(getActivity(), "You clicked My profile", Toast.LENGTH_SHORT).show();
+                }
+                if (i == 1) {
+                    firebaseAuth.signOut();
+                    getActivity().finish();
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
+            }
+        });
 
     }
 }
