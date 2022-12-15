@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1014325928789",
+    "firebase_url": "https://persona-7e0ec-default-rtdb.firebaseio.com",
     "project_id": "persona-7e0ec",
     "storage_bucket": "persona-7e0ec.appspot.com"
   },
@@ -18,6 +19,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.royalaviation.persona",
+            "certificate_hash": "90b150ea46ac41058b212b0a572f28132326ebfe"
+          }
+        },
+        {
+          "client_id": "1014325928789-mtasn9c8shqp5e30bbr4tde824rnol4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGOh84uEyCvgjKgvltQHkLM6IX-UHH210"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014325928789-mtasn9c8shqp5e30bbr4tde824rnol4u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014325928789:android:f840546daea15b0bf945dc",
+        "android_client_info": {
+          "package_name": "org.tensorflow.lite.codelabs.textclassification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014325928789-08kkbp1gi4ki4m7sejnlkboc8iv23eqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tensorflow.lite.codelabs.textclassification",
             "certificate_hash": "90b150ea46ac41058b212b0a572f28132326ebfe"
           }
         },

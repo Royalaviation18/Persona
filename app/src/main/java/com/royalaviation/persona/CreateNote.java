@@ -104,7 +104,7 @@ public class CreateNote extends AppCompatActivity {
                         public void onSuccess(Void unused) {
                             Toast.makeText(getApplicationContext(), "Note created successfully", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(CreateNote.this, NotesActivity.class));
+                            startActivity(new Intent(CreateNote.this, ActivityHome.class));
 
                         }
 

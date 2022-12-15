@@ -31,10 +31,10 @@ public class ActivityHome extends AppCompatActivity {
                     selectedFragment = new HomeFragment();
                     break;
 
-
-                case R.id.nav_notes:
-                    selectedFragment = new NotesFragment();
-                    break;
+//
+//                case R.id.nav_notes:
+//                    selectedFragment = new NotesFragment();
+//                    break;
 
                 case R.id.nav_journal:
                     selectedFragment = new JournalFragment();

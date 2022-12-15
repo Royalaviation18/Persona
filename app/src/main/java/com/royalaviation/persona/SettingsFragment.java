@@ -29,7 +29,6 @@ public class SettingsFragment extends Fragment {
     private ListView listView;
     private FirebaseAuth firebaseAuth;
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -53,6 +52,7 @@ public class SettingsFragment extends Fragment {
                     getActivity().finish();
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 }
+
             }
         });
 

@@ -27,6 +27,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    androidResources {
+        noCompress 'tflite'
+    }
 }
 
 dependencies {
@@ -44,5 +52,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.firebaseui:firebase-ui-firestore:8.0.1'
     implementation 'com.google.firebase:firebase-core:21.1.1'
-
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    testImplementation 'org.robolectric:robolectric:4.3'
+    //sentimental
+    implementation 'com.google.firebase:firebase-ml-modeldownloader:24.1.1'
+    // TFLite Task API (Text) dependency
+    implementation 'org.tensorflow:tensorflow-lite-task-text:0.3.0'
+}
+project(':app').tasks.withType(Test) {
+    enabled = false
 }
