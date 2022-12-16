@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editJournalActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarEditJournal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/etJournalEditTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="12dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/btnJDate"
+        style="?android:spinnerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/toolBarEditJournal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner_radius"
+        android:text="Jan 01, 2020"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etEditJournalDesc"
+        android:layout_width="match_parent"
+        android:layout_height="475dp"
+        android:layout_below="@id/btnJDate"
+        android:background="#faf7f7"
+        android:gravity="top|left"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Share your feelings "
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSaveEditJournal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/updated"
+        app:maxImageSize="30dp" />
+
+</RelativeLayout>

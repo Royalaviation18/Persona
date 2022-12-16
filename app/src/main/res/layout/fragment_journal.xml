@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_journal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:id="@+id/rv_journal" />
+        android:scrollbars="vertical" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -26,17 +26,17 @@
         app:layout_constraintVertical_bias="0.958" />
 
     <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fb_cal"-->
-<!--        android:layout_width="46dp"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:layout_gravity="end"-->
-<!--        android:src="@drawable/ic_baseline_calendar_today_24"-->
-<!--        app:fabSize="normal"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.14"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.816" />-->
+    <!--        android:id="@+id/fb_cal"-->
+    <!--        android:layout_width="46dp"-->
+    <!--        android:layout_height="45dp"-->
+    <!--        android:layout_gravity="end"-->
+    <!--        android:src="@drawable/ic_baseline_calendar_today_24"-->
+    <!--        app:fabSize="normal"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.14"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.816" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

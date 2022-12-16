@@ -46,7 +46,7 @@ import java.util.concurrent.Executors;
 public class createJournal extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private Button btn_date, btnPredict;
-    private FloatingActionButton fb_save, fb_jr_Mic;
+    private FloatingActionButton fb_save, fb_jr_Mic, btnImage;
     private EditText et_title, et_content;
     private TextView tvResult;
     private FirebaseAuth firebaseAuth;
@@ -68,6 +68,7 @@ public class createJournal extends AppCompatActivity {
         executorService = Executors.newSingleThreadExecutor();
         btn_date = findViewById(R.id.btn_date);
         btn_date.setText(getTodaysDate());
+        btnImage = findViewById(R.id.btnImagetoText);
         et_title = findViewById(R.id.et_jr_title);
         et_content = findViewById(R.id.et_jr_content);
         fb_save = findViewById(R.id.fb_save);
@@ -77,6 +78,11 @@ public class createJournal extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        Intent intent = getIntent();
+        String data = intent.getStringExtra("content");
+        et_content.setText(data);
         //change
         btnPredict.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +92,13 @@ public class createJournal extends AppCompatActivity {
         });
         //change
         downloadModel("sentiment_analysis");
+
+        btnImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), uploadImage.class));
+            }
+        });
 
 
         fb_save.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +112,7 @@ public class createJournal extends AppCompatActivity {
 
                 if (title.isEmpty()) {
                     et_title.setError("Please enter the title");
-                    et_content.requestFocus();
+                    et_title.requestFocus();
                     return;
                 }
                 if (content.isEmpty()) {
