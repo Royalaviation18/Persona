@@ -15,7 +15,8 @@
 
 
 ## Architecture Diagram
-(https://github.com/Royalaviation18/Persona/blob/main/Architecture_persona.drawio.png)
+![Splash Screen](https://github.com/Royalaviation18/Persona/blob/main/Architecture_persona.drawio.png)
+
 
 
 ## Project Execution stages
