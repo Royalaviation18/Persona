@@ -1,11 +1,11 @@
 
 # Persona
 
-- PERSONA is an android-based application, structured to work as a  planner, health tracker, and personal diary.
-- The idea behind the application is to allow the user to put everything going in their head on the app. 
+- PERSONA is an Android-based application, structured to work as a  planner, health tracker, and personal diary.
+- The idea behind the application is to allow the user to put everything going through their head on the app. 
 - Persona is a platform where the idea is to make your life easier and your brain stress-free.
-- PERSONA is a space where users can maintain journals, add reminders and events, and track daily activities like water intake, steps count, sleep and Expenses.
-- It will be structured to have several features like speech-to-text recognition for taking quick notes
+- PERSONA is a space where users can maintain journals, add reminders and events, and track daily activities like water intake, step count, sleep and Expenses.
+- It will be structured to have several features like speech-to-text recognition, for taking quick notes
 - Perform sentiment analysis based on your diary entries, and much more
 
 
